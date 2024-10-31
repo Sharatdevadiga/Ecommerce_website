@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-step {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-100%);
+  } /* Step 1 */
+  40% {
+    transform: translateX(-200%);
+  } /* Step 2 */
+  60% {
+    transform: translateX(-300%);
+  } /* Step 3 */
+  80% {
+    transform: translateX(-400%);
+  } /* Step 4 */
+  100% {
+    transform: translateX(-500%);
+  } /* Step 5 */
+}
