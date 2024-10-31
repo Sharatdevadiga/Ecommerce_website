@@ -1,12 +1,12 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaCartShopping } from "react-icons/fa6";
 import Button from "../components/ui/Button";
 import { IoArrowBack } from "react-icons/io5";
 
 function PlaceOrder() {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   function handleGoBack() {
-    Navigate(-1);
+    navigate(-1);
   }
 
   return (

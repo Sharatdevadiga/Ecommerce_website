@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Product from "../../types/product";
 import { removeItemFromWishlist } from "../../features/wishList/wishListSlice";
 import Button from "../ui/Button";
-import useAddToCart from "../../hooks/useToggleCart";
 import useToogleCart from "../../hooks/useToggleCart";
 import { MdOutlineShoppingBag, MdShoppingBag } from "react-icons/md";
 
