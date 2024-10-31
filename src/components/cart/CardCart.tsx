@@ -37,7 +37,7 @@ function CardCart({ item }: CardCartProps) {
   }, [modalOpen]);
 
   return (
-    <div className="border-1 relative max-w-[500px] p-2 shadow-md">
+    <div className="relative max-w-[500px] border-2 p-2 shadow-md">
       <div className="z-20 grid grid-cols-2 bg-white pr-2">
         {/* image */}
         <Link

@@ -7,6 +7,8 @@ import Product from "../../types/product";
 import { removeItemFromWishlist } from "../../features/wishList/wishListSlice";
 import Button from "../ui/Button";
 import useAddToCart from "../../hooks/useToggleCart";
+import useToogleCart from "../../hooks/useToggleCart";
+import { MdOutlineShoppingBag, MdShoppingBag } from "react-icons/md";
 
 interface CardWishListProps {
   item: Product;
@@ -15,7 +17,9 @@ interface CardWishListProps {
 function CardWishList({ item }: CardWishListProps) {
   const { id, title, price, rating, image } = item;
   const dispatch = useAppDispatch();
-  const { handleAddToCart } = useAddToCart({ product: item });
+  const { handleAddToCart, inCart, handleRemoveFromCart } = useToogleCart({
+    product: item,
+  });
 
   // To remove current item from cart
   function handleRemoveFromWishList() {
@@ -27,7 +31,7 @@ function CardWishList({ item }: CardWishListProps) {
   }
 
   return (
-    <div className="border-1 relative w-full max-w-[500px] p-2 shadow-md">
+    <div className="relative w-full max-w-[500px] border-2 p-2 shadow-md">
       <div className="z-20 grid grid-cols-2 bg-white pr-2">
         {/* image */}
         <Link
@@ -53,7 +57,12 @@ function CardWishList({ item }: CardWishListProps) {
               </p>
             </div>
             {/* adding to cartt */}
-            <Button onClick={handleAddToCart} text="Add to Cart" />
+            <Button
+              variant="ctaBag"
+              Icon={inCart ? MdShoppingBag : MdOutlineShoppingBag}
+              text={inCart ? "Remove from bag" : "Add to bag"}
+              onClick={inCart ? handleRemoveFromCart : handleAddToCart}
+            ></Button>
           </div>
         </div>
       </div>

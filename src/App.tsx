@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Wrapper from "./components/layouts/Wrapper";
 import Loader from "./components/ui/Loader";
+import PlaceOrder from "./pages/PlaceOrder";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
@@ -29,6 +30,7 @@ function App(): JSX.Element {
             <Route path="/wishList" element={<WishListPage />} />
             <Route path="/user" element={<ProfilePage />} />
             <Route path="/search/:query" element={<SearchResultsPage />} />
+            <Route path="/placeOrder" element={<PlaceOrder />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Wrapper>

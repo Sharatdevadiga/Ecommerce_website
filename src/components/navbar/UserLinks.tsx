@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import UserLink from "../../types/userlink";
 import { useAppSelector } from "../../app/hooks";
 
@@ -11,6 +11,7 @@ function UserLinks() {
   const auth = useAppSelector((state) => state.auth);
   const cartItems = useAppSelector((state) => state.cart.items.length);
   const wishListItems = useAppSelector((state) => state.wishList.items.length);
+  const location = useLocation();
 
   const userLinks: UserLink[] = [
     {
@@ -38,7 +39,7 @@ function UserLinks() {
     <div className="flex gap-3 pr-2 text-gray-700 md:gap-4">
       {userLinks.map((link) => (
         <Link
-          className="flex flex-col items-center justify-center text-xs sm:text-sm"
+          className={`flex flex-col items-center justify-center text-xs sm:text-sm ${location.pathname === link.path ? "text-pink-700" : ""}`}
           to={link.path}
           key={link.id}
         >

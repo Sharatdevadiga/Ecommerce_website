@@ -1,5 +1,7 @@
 // import { Link } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+
 interface BillProps {
   totalPrice: number;
   itemsCount: number;
@@ -7,8 +9,14 @@ interface BillProps {
 
 function Bill({ totalPrice, itemsCount }: BillProps) {
   const discount = totalPrice * 0.1;
+  const navigate = useNavigate();
+
+  function handlePlaceOrder() {
+    navigate("/placeOrder");
+  }
+
   return (
-    <div className="flex w-full flex-col items-center border shadow-md sm:w-[500px]">
+    <div className="flex w-full flex-col items-center border-2 shadow-md sm:w-[500px]">
       <div className="space-y-8 bg-white p-4 py-12">
         <div className="mb-4 text-lg font-semibold text-gray-800">
           PRICE DETAILS ({itemsCount} Items)
@@ -58,7 +66,7 @@ function Bill({ totalPrice, itemsCount }: BillProps) {
           className="block w-full rounded-md px-4 py-4 text-center font-bold text-white bg-gradient-orange-RP hover:bg-gradient-pink-RO disabled:cursor-not-allowed disabled:opacity-50"
           // to="/placeOrder"
           disabled={totalPrice === 0}
-          onClick={() => {}}
+          onClick={handlePlaceOrder}
         >
           Place Order
         </button>
