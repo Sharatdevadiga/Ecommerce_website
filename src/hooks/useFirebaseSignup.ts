@@ -2,6 +2,7 @@ import auth from "../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import AuthFormInput from "../types/authFormInput";
 import { useState } from "react";
+import { FirebaseError } from "firebase/app";
 
 // Functions were taken from the firebase doc and it is integrated with some state for further usage
 function useFirebaseSignup({ email, password }: AuthFormInput) {
@@ -16,7 +17,15 @@ function useFirebaseSignup({ email, password }: AuthFormInput) {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       if (res) setData(res);
     } catch (err) {
-      setError(err.message);
+      if (err instanceof FirebaseError) {
+        if (err instanceof FirebaseError) {
+          setError(err.message);
+        } else {
+          setError("Something went wrong. Please try again.");
+        }
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
     }
 
     setLoading(false);

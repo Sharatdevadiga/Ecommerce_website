@@ -8,22 +8,22 @@ const socialLinks: SocialLink[] = [
   {
     id: 1,
     icon: FaFacebookSquare,
-    path: "https://www.facebook.com/myntra",
+    path: "https://www.facebook.com",
   },
   {
     id: 2,
     icon: FaSquareXTwitter,
-    path: "https://x.com/myntra",
+    path: "https://x.com",
   },
   {
     id: 3,
     icon: FaSquareYoutube,
-    path: "https://www.youtube.com/user/myntradotcom",
+    path: "https://www.youtube.com",
   },
   {
     id: 4,
     icon: ImInstagram,
-    path: "https://www.instagram.com/myntra/",
+    path: "https://www.instagram.com",
   },
 ];
 

@@ -8,11 +8,8 @@ function NavBar(): JSX.Element {
     <div className="h:12 fixed top-0 z-50 flex w-full items-center justify-between gap-4 bg-white bg-opacity-40 px-2 py-2 shadow-md backdrop-blur-md sm:h-16 sm:gap-8 md:px-8 lg:px-10">
       {/* for large screen */}
       <div className="hidden items-center gap-3 sm:flex">
-        <Link
-          to="/"
-          className="flex h-8 w-9 rotate-180 rounded-full bg-pink-100 p-1"
-        >
-          <img src="./myntraLogo.png" alt="Myntral logo" />
+        <Link to="/" className="flex h-10 w-12 rounded-full p-1">
+          <img src="./logo.png" alt="logo" />
         </Link>
         <CategoryLinks />
       </div>
@@ -20,11 +17,8 @@ function NavBar(): JSX.Element {
       {/* for small screen */}
       <div className="flex items-center gap-2 sm:hidden sm:gap-3">
         <CategoryLinks />
-        <Link
-          to="/"
-          className="flex h-8 w-9 rotate-180 rounded-full bg-pink-100 p-1"
-        >
-          <img src="./myntraLogo.png" alt="Myntral logo" />
+        <Link to="/" className="flex h-10 w-12 rounded-full p-1">
+          <img src="./logo.png" alt="logo" />
         </Link>
       </div>
 

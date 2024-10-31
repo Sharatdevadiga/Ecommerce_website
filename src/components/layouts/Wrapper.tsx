@@ -2,11 +2,17 @@ import Footer from "./Footer";
 import NavBar from "../navbar/NavBar";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { useEffect } from "react";
 
 interface WrapperProps {
   children: React.ReactNode;
 }
 function Wrapper({ children }: WrapperProps) {
+  // remain at teh top of the page after navigating to different page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [children]);
+
   return (
     <div>
       <NavBar />

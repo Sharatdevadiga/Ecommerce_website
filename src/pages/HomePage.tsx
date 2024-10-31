@@ -8,13 +8,15 @@ function HomePage() {
 
   return (
     <div className="mt-16">
-      <HomeHeader />
       {!isLoading && data ? (
-        <div className="mx-auto flex flex-wrap items-center justify-center p-12">
-          {data.map((product) => (
-            <CardProduct product={product} key={product.id} />
-          ))}
-        </div>
+        <>
+          <HomeHeader />
+          <div className="mx-auto flex flex-wrap items-center justify-center p-12">
+            {data.map((product) => (
+              <CardProduct product={product} key={product.id} />
+            ))}
+          </div>
+        </>
       ) : (
         <Loader />
       )}

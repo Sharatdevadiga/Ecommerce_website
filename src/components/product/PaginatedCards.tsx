@@ -29,7 +29,7 @@ function PaginatedCards({ data }: PaginatedCardsProps) {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="mx-auto flex flex-wrap items-center justify-center p-12">
+      <div className="mx-auto flex flex-wrap items-center justify-center py-12 lg:p-12">
         {currentProducts?.map((product) => (
           <CardProduct product={product} key={product.id}></CardProduct>
         ))}

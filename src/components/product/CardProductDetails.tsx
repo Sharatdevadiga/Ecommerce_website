@@ -61,7 +61,7 @@ function CardProductDetails({ product }: CardProps) {
             </p>
 
             {/* buttons to add product to cart an dwishlist */}
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <Button
                 variant="ctaWishList"
                 Icon={inWishList ? FaHeart : FaRegHeart}

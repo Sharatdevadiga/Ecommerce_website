@@ -12,7 +12,7 @@ function Footer() {
         <Assurences />
       </div>
       <p className="text-center text-sm">
-        © 2024 www.myntra.com. All rights reserved.© 2024 www.myntra.com. All
+        © 2024 www.WeStore.com All rights reserved.© 2024 www.myntra.com. All
         rights reserved.
       </p>
     </footer>
