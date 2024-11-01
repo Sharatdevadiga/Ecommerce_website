@@ -16,7 +16,7 @@ An e-commerce web application built with modern technologies to offer a seamless
 
 ## Demo
 
-Check out a live demo of the app here.
+Check out a live demo of the app [here](https://ecommerce-website-two-gray.vercel.app/).
 
 ## Features
 
@@ -34,8 +34,8 @@ Check out a live demo of the app here.
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/ecommerce-app.git
-   cd ecommerce-app
+   git clone https://github.com/Sharatdevadiga/Ecommerce_website.git
+   cd Ecommerce_website
 
    ```
 
