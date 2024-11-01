@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import auth from "../../firebase/firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
 import { Store } from "../../app/store";
-import { setCartUserId } from "../cart/cartSlice";
+import { clearCart, setCartUserId } from "../cart/cartSlice";
 import User from "../../types/user";
 import { clearWishlist } from "../wishList/wishListSlice";
 
@@ -39,6 +39,7 @@ onAuthStateChanged(auth, (user) => {
   } else {
     Store.dispatch(setUser(initialState));
     Store.dispatch(clearWishlist());
+    Store.dispatch(clearCart());
     localStorage.removeItem("ecommerceCart");
     localStorage.removeItem("ecommerceWishlist");
   }
