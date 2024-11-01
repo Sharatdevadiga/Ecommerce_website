@@ -19,11 +19,19 @@ function WishListPage() {
   //   if user is logged in, show their bag items
   if (auth.isLoggedIn)
     return (
-      <div className="flex flex-col flex-wrap items-center justify-center gap-16 pt-12">
-        {wishList.items.map((product) => (
-          <CardWishList item={product} key={product.id} />
-        ))}
-      </div>
+      <>
+        <div className="mx-auto mt-24 flex w-full flex-col items-center justify-center bg-gradient-to-r from-pink-500 via-red-500 to-orange-400 p-8 text-center text-white">
+          <h2 className="text-center text-2xl font-semibold uppercase">
+            Your Wishlist
+          </h2>
+        </div>
+
+        <div className="flex flex-col flex-wrap items-center justify-center gap-16 pt-12">
+          {wishList.items.map((product) => (
+            <CardWishList item={product} key={product.id} />
+          ))}
+        </div>
+      </>
     );
 
   //  if user is not logged in, tell them to login

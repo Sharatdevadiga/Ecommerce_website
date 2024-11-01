@@ -37,9 +37,13 @@ function SearchResultsPage() {
   if (!isLoading && filteredData.length > 0)
     return (
       <div className="mt-24">
-        <h2 className="text-center text-3xl font-semibold text-gradient-pink-RO">
-          Found {filteredData.length} items for "{searchQuery}"
-        </h2>
+        <div className="mx-auto mt-24 flex w-full flex-col items-center justify-center bg-gradient-to-r from-pink-500 via-red-500 to-orange-400 p-8 text-center text-white">
+          <h2 className="text-center text-2xl font-semibold uppercase">
+            Found {filteredData.length} item
+            {filteredData.length > 1 ? "'s" : ""} for : {searchQuery}
+          </h2>
+        </div>
+
         {!isLoading && filteredData.length > 0 ? (
           <PaginatedCards data={filteredData} />
         ) : (

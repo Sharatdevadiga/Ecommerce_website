@@ -1,14 +1,14 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import FormInput from "../components/ui/FormInput";
-import AuthFormInput from "../types/authFormInput";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import AuthFormInput from "../types/authFormInput";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from "../firebase/firebaseConfig";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import { FirebaseError } from "firebase/app";
+import FormInput from "../components/ui/FormInput";
 
-function SignupPage(): JSX.Element {
+function UserSignupPage(): JSX.Element {
   const [isSigningUp, setIsSigningup] = useState(false);
   const navigate = useNavigate();
 
@@ -95,9 +95,9 @@ function SignupPage(): JSX.Element {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
             Already have an account?{" "}
-            <a href="/login" className="text-pink-600 hover:underline">
+            <Link to="/login" className="text-pink-600 hover:underline">
               Login
-            </a>
+            </Link>
           </p>
         </div>
       </div>
@@ -105,4 +105,4 @@ function SignupPage(): JSX.Element {
   );
 }
 
-export default SignupPage;
+export default UserSignupPage;

@@ -3,7 +3,7 @@ import FormInput from "../components/ui/FormInput";
 import auth from "../firebase/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FirebaseError } from "firebase/app";
 
@@ -94,17 +94,17 @@ function LoginPage(): JSX.Element {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{" "}
-            <a href="/signup" className="text-pink-600 hover:underline">
+            <Link to="/signup" className="text-pink-600 hover:underline">
               Sign up
-            </a>
+            </Link>
           </p>
           <p className="text-sm text-gray-600">
-            <a
-              href="/forgot-password"
+            <Link
+              to="/forgotPassword"
               className="text-pink-600 hover:underline"
             >
               Forgot password?
-            </a>
+            </Link>
           </p>
         </div>
       </div>

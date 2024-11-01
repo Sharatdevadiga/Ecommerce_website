@@ -29,14 +29,14 @@ function PaginatedCards({ data }: PaginatedCardsProps) {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="mx-auto flex flex-wrap items-center justify-center py-12 lg:p-12">
+      <div className="mx-auto flex flex-wrap items-center justify-center px-12 py-8">
         {currentProducts?.map((product) => (
           <CardProduct product={product} key={product.id}></CardProduct>
         ))}
         <div />
       </div>
       {/* Pagination Controls */}
-      <div className="mt-12 flex items-center justify-center gap-4">
+      <div className="mt-4 flex items-center justify-center gap-4">
         <button
           onClick={handlePreviousPage}
           disabled={currentPage === 1}
